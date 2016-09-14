@@ -24,9 +24,9 @@
  *       'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
  *       'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
  *       'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
- *       'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
- *       'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Hidden Month field ID
- *       'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' // Hidden Year field ID
+ *       'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Day text field ID
+ *       'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Month text field ID
+ *       'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' //  Year text field ID
  *       //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
  *       //Requieres jQueryUI Datepicker
  *       'onlyDateFieldId'       : '#edit-submitted-new-1473715368426', // Date of Birth Text Filed ID
@@ -61,9 +61,9 @@
                 'checkBoxPc'            : '', // Id Checkbox for Privacy & Cookies
                 'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
                 'checkBoxOptIn'         : '', // Marketing Opt In checkbox ID
-                'dayId'                 : '', // Day field ID
-                'monthId'               : '', // Month field ID
-                'yearId'                : '', // Year field ID
+                'dayId'                 : '', // Day text field ID
+                'monthId'               : '', // Month text field ID
+                'yearId'                : '', // Year text field ID
                 //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
                 //Requieres jQueryUI Datepicker
                 'onlyDateFieldId'       : '', // Date of Birth Text Filed ID
@@ -120,7 +120,7 @@
 
         that.switchDate = function()
         {
-            if(config.dayId !="" && config.monthId !="" && config.yearId !="" && onlyDateFieldId != "")
+            if(config.dayId !="" && config.monthId !="" && config.yearId !="" && config.onlyDateFieldId != "")
             {
                 $(config.onlyDateFieldId).datepicker({ //jQueryUi Datepicker
                     dateFormat:"dd/mm/yy",
@@ -307,19 +307,19 @@
 
         that.dateValidate = function()
         {
-            if(config.requiredTxtFieldMsg == "" && config.dayId !="" && config.montId !="" && config.yearId !="")
+            if(config.onlyDateFieldId == "" && config.dayId !="" && config.montId !="" && config.yearId !="")
             {
                 //Day date validation limit day no more than 31
                 $(config.dayId).keyup(function(event) 
                 {
-                    if($(config.dayId).val() > 31){ 
+                    if($(this).val() > 31){ 
                         $(this).val('').focus().css({
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
                         });;  
                         return false; 
                     }
-                    else
+                    else if($(this).val() <= 31 && $(this).val() !="")
                     {
                         $(this).css({
                             'background-color':'#B8F5B1',
@@ -338,13 +338,14 @@
                         });;  
                         return false; 
                     }
-                    else
+                    else if($(this).val() <= 12 && $(this).val() !="")
                     {
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
                         });
                     }
+
                 });
 
                 //Year validation limit year no more than current
@@ -359,13 +360,14 @@
                         });; 
                         return false; 
                     }
-                    else
+                    else if($(this).val() <= current && $(this).val() !="")
                     {
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
                         });
                     }
+
                 }); 
             }       
         }     

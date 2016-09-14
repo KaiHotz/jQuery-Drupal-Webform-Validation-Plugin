@@ -9,7 +9,10 @@
 	jQuery(document).ready(function($) {
 		$('#webform-client-form-61').fromValidate({
 			'onlyTextFields' : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'],
-			'reEmailfieldId' : '#edit-submitted-new-1452868753265'
+			'reEmailfieldId' : '#edit-submitted-new-1452868753265',
+			'dayId'			 : '#edit-submitted-new-1453816715685-new-1473774329945',
+			'monthId'		 : '#edit-submitted-new-1453816715685-new-1473774309612',
+			'yearId'		 : '#edit-submitted-new-1453816715685-new-1473774343584'
 		});
 	});
 	</script>
@@ -52,6 +55,25 @@
 					</label>
 					<input class="email form-text required ctkemail1" id="edit-submitted-new-1452868753265" name="submitted[new_1452868753265]" value="" size="60" maxlength="128" placeholder="Re enter E-mail *" type="text">
 				</div>
+				<fieldset class="webform-component-fieldset form-wrapper" id="webform-component-new-1453816715685">
+					<legend>
+						<span class="fieldset-legend">Date of birth</span>
+					</legend>
+					<div class="fieldset-wrapper">
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774329945">
+						 	<label style="display: none;">DD </label>
+						 	<input id="edit-submitted-new-1453816715685-new-1473774329945" name="submitted[new_1453816715685][new_1473774329945]" value="" size="60" maxlength="128" class="form-text required" placeholder="DD " type="text">
+						</div>
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774309612">
+					  		<label style="display: none;">MM </label>
+					 		<input id="edit-submitted-new-1453816715685-new-1473774309612" name="submitted[new_1453816715685][new_1473774309612]" value="" size="60" maxlength="128" class="form-text required" placeholder="MM " type="text">
+						</div>
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774343584">
+					  		<label style="display: none;">YYYY </label>
+					 		<input id="edit-submitted-new-1453816715685-new-1473774343584" name="submitted[new_1453816715685][new_1473774343584]" value="" size="60" maxlength="128" class="form-text required" placeholder="YYYY " type="text">
+						</div>
+					</div>
+				</fieldset>
 				<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1473795570392">
 					<label style="display: none;">
 						Subject 

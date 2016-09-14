@@ -57,9 +57,9 @@ All of the options below are available to customize Webform Validation Plugin.
 | `checkBoxPc`           | ''                     											     | string | Id of Checkbox for Pricacy & Cookie          		|
 | `pcMessage`            | 'You must accept Our Privacy Policy'                                  | string | Pricacy & Cookie check requiered message 			|
 | `checkBoxOptIn`        | ''                                                                    | string | Id of Checkbox for Marketing OptIn  		       	|
-| `dayId`                | ''                                                                    | string | Day field ID                                        |
-| `monthId`              | ''                                                                    | string | Month field ID                                      |
-| `yearId`               | ''                                                                    | string | Year field ID                                       |
+| `dayId`                | ''                                                                    | string | Day text field ID                                   |
+| `monthId`              | ''                                                                    | string | Month text field ID                                 |
+| `yearId`               | ''                                                                    | string | Year text field ID                                  |
 | `onlyDateFieldId`      | ''                                                                  	 | string | Date of Birth Text Filed ID                 	 	|
 | `urlFw`                | ''                                                                    | string | Foneworx URL                                        |
 | `apiKeyFw`             | ''                                                                    | string | FoneWorx API Key                                    |
