@@ -46,6 +46,7 @@ All of the options below are available to customize Webform Validation Plugin.
 | ---------------------- |:---------------------------------------------------------------------:|:------:| ----------------------------------------------------|
 | `backgroundColor`      | '#fff'                                                                | string | Field standart background Color                 	|
 | `textColor`            | '#000'					                                             | string | Field standart Text Color                       	|
+| `successURL`  		 | 'thankYou'                           								 | string | Redirect URL for Thank You Page						|
 | `requiredTxtFieldMsg`  | 'Mandatory Field'                           							 | string | Mandatory Field Message 							|
 | `requiredEmailFieldMsg`| 'Enter a valid E-Mail address'                                        | string | Valid Email Message           						|
 | `onlyTextFields`       | ''                         			                                 | array  | Array of Field ID's that accept only Text input 	|
@@ -70,6 +71,7 @@ Age Gate Plugin default settings
 $('form').fromValidate({
     'backgroundColor'       : '#fff', 
     'textColor'             : '#000', 
+    'successURL'            : 'thankYou',
     'requiredTxtFieldMsg'   : 'Mandatory Field', 
     'requiredEmailFieldMsg' : 'Enter a valid E-Mail address',
     'onlyTextFields'        : [], 

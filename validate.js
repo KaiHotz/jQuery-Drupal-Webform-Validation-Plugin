@@ -12,6 +12,7 @@
  *   $('form').fromValidate({
         'backgroundColor'       : '#fff', // Field standart background Color
         'textColor'             : '#000', // Field standart Text Color
+        'successURL'            : 'thankYou', // Redirect URL for Thank You Page
         'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
         'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
         'onlyTextFields'        : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'], // Array of Field ID's that accept only Text input
@@ -42,6 +43,7 @@
             config = {
                 'backgroundColor'       : '#fff', // Field standart background Color
                 'textColor'             : '#000', // Field standart Text Color
+                'successURL'            : 'thankYou', // Redirect URL for Thank You Page
                 'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
                 'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
                 'onlyTextFields'        : [], // Array of Field ID's that accept only Text input
@@ -346,8 +348,15 @@
 
                 if( error = false)
                 {
-                    $('form').submit();
-                    that.formReset();
+                    $.ajax({
+                        type: "POST",
+                        url: jQuery('form').attr('action'),
+                        data: $('form').serialize(), // serializesthe form's elements.
+                        success: function (data) {
+                            $('form#webform-client-form-91')[0].reset();
+                            $(location).attr('href', config.successURL);
+                        }
+                    });
                 }
 
             });
