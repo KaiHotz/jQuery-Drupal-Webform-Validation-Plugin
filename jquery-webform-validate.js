@@ -35,7 +35,6 @@
 
 (function($)
 {
-
     $.fn.fromValidate = function(settings)
     {
 
