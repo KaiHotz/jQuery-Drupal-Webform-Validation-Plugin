@@ -347,7 +347,7 @@
                             dataType: 'json',
                             async: false,
                             success: function (data) {
-                                $('form').formReset();
+                                that.formReset();
                                 $(location).attr('href', config.successURL);
                             }     
                         });
@@ -360,7 +360,7 @@
                             url: $('form').attr('action'),
                             data: $('form').serialize(), // serializesthe form's elements.
                             success: function (data) {
-                                $('form').formReset();
+                                that.formReset();
                                 $(location).attr('href', config.successURL);
                             }
                         });
@@ -373,6 +373,7 @@
         //Initilaces The Plugin
         that.init = function()
         {
+            that.formReset();
             that.textValidation();
             that.numericValidation();
             that.switchEmail();
