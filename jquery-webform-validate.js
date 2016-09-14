@@ -10,6 +10,7 @@
  *
  * Useage:
  *   $('form').fromValidate({
+         'error'                 : true, // Initial Error set for Form Submition
  *       'backgroundColor'       : '#fff', // Field standart background Color
  *       'textColor'             : '#000', // Field standart Text Color
  *       'successURL'            : 'thankYou', // Redirect URL for Thank You Page
@@ -46,6 +47,7 @@
 
         var that = this,
             config = {
+                'error'                 : true, // Initial Error set for Form Submition
                 'backgroundColor'       : '#fff', // Field standart background Color
                 'textColor'             : '#000', // Field standart Text Color
                 'successURL'            : 'thankYou', // Redirect URL for Thank You Page
@@ -143,7 +145,7 @@
         {
             if(config.reEmailfieldId != '')
             {
-                $('.webform-component-email input').on('change' ,function(event){
+                $('.webform-component-email input').on('blur' ,function(event){
                     $(config.reEmailfieldId).val($(this).val());
                 });
             }
@@ -185,7 +187,7 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        error = true;
+                        config.error = true;
                     break;
                     default: 
                         $(this).css({
@@ -193,7 +195,7 @@
                             'color':'#000'
                         });
                         
-                        error = false; 
+                        config.error = false; 
                 }
             });
         }
@@ -215,7 +217,7 @@
 
                     $(this).val(config.requiredEmailFieldMsg);
 
-                    error = true;
+                    config.error = true;
                 }
                 else
                 {
@@ -224,7 +226,7 @@
                         'color':'#000'
                     });
 
-                    error = false;
+                    config.error = false;
                 }
 
             });
@@ -241,7 +243,7 @@
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
                         });
-                        error = true;
+                        config.error = true;
                     break;
                     default: 
                         $(this).css({
@@ -249,7 +251,7 @@
                             'color':'#000'
                         });
                         
-                        error = false; 
+                        config.error = false; 
                 }
             });
         }
@@ -262,7 +264,7 @@
                 if(!checked_optin) 
                 {
                     alert(config.tcMessage);
-                    error = true;
+                    config.error = true;
                 } 
 
             }
@@ -273,7 +275,7 @@
                 if(!checked_pc) 
                 {
                     alert(config.pcMessage);
-                     error = true;
+                    config.error = true;
                 } 
 
             }
@@ -294,7 +296,7 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        error = true;
+                        config.error = true;
                     break;
                     default: 
                         $(this).css({
@@ -302,7 +304,7 @@
                             'color':'#000'
                         });
                         
-                        error = false; 
+                        config.error = false; 
                 }
             });
         }      
@@ -321,15 +323,15 @@
             {
                 event.preventDefault();
 
-                var error = true;
-
                 that.textFieldValidation();
                 that.emailValidation();
                 that.selectValidation();
                 that.textAreaValidation();
                 that.checkboxValidation();
 
-                if( error = false)
+                console.log(config.error)
+
+                if( config.error = false)
                 {
                     if(config.urlFw != '' && config.apiKeyFw != '')
                     {
@@ -349,12 +351,9 @@
                             dataType: 'json',
                             async: false,
                             success: function (data) {
-                                that.formReset();
+                                $('form').formReset();
                                 $(location).attr('href', config.successURL);
-                            },
-                            error: function(error) { 
-                                console.log(error);
-                            }       
+                            }     
                         });
 
                     }
@@ -362,15 +361,12 @@
                     {
                         $.ajax({
                             type: "POST",
-                            url: that.attr('action'),
-                            data: that.serialize(), // serializesthe form's elements.
+                            url: $('form').attr('action'),
+                            data: $('form').serialize(), // serializesthe form's elements.
                             success: function (data) {
-                                that.formReset();
+                                $('form').formReset();
                                 $(location).attr('href', config.successURL);
-                            },
-                            error: function(error) { 
-                                console.log(error);
-                            }   
+                            }
                         });
                     }
                 }

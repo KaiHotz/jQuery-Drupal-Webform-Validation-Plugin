@@ -34,7 +34,6 @@ jQuery(document).ready(function($){
    $('form').fromValidate();
 
 });
-```
 
 ## Customizing
 
@@ -44,6 +43,7 @@ All of the options below are available to customize Webform Validation Plugin.
 
 | Variable               | Default                                                               | Type   | Description                                     	|
 | ---------------------- |:---------------------------------------------------------------------:|:------:| ----------------------------------------------------|
+| `error`                | true                                                                  | boolean| Initial Error set for Form Submition                |
 | `backgroundColor`      | '#fff'                                                                | string | Field standart background Color                 	|
 | `textColor`            | '#000'					                                             | string | Field standart Text Color                       	|
 | `successURL`  		 | 'thankYou'                           								 | string | Redirect URL for Thank You Page						|
@@ -73,6 +73,7 @@ Age Gate Plugin default settings
 
 ```javascript
 $('form').fromValidate({
+    'error'                 : true, // Initial Error set for Form Submition
     'backgroundColor'       : '#fff', 
     'textColor'             : '#000', 
     'successURL'            : 'thankYou',
