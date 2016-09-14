@@ -326,14 +326,14 @@
         //Form reset
         that.formReset = function()
         {
-            $('form')[0].reset();
+            that[0].reset();
         }
 
 
         //Submit function
         that.formSubmit = function()
         {
-            $('from input[type="submit"]').click( function(event) 
+            $('input[type="submit"]').click( function(event) 
             {
                 event.preventDefault();
 
@@ -349,10 +349,10 @@
                 {
                     $.ajax({
                         type: "POST",
-                        url: jQuery('form').attr('action'),
-                        data: $('form').serialize(), // serializesthe form's elements.
+                        url: that.attr('action'),
+                        data: that.serialize(), // serializesthe form's elements.
                         success: function (data) {
-                            $('form#webform-client-form-91')[0].reset();
+                            that.formReset();
                             $(location).attr('href', config.successURL);
                         }
                     });
