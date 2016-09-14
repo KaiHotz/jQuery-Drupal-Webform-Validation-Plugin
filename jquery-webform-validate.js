@@ -327,7 +327,9 @@
                 that.textAreaValidation();
                 that.checkboxValidation();
 
-                if(!$.inArray(true, config.error))
+                console.log(config.error);
+
+                if(config.error == "")
                 {
                     if(config.urlFw != '' && config.apiKeyFw != '')
                     {
