@@ -34,6 +34,7 @@ jQuery(document).ready(function($){
    $('form').fromValidate();
 
 });
+```
 
 ## Customizing
 
