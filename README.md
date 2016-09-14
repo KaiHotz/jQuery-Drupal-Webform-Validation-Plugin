@@ -20,7 +20,7 @@ To use Webform Validation Plugin, you’ll need to make sure both the Webform Va
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
  
 <!-- Include js plugin -->
-<script src="js/validate.js"></script>
+<script src="js/jquery-webform-validate.js"></script>
 ```
 
 

@@ -10,25 +10,25 @@
  *
  * Useage:
  *   $('form').fromValidate({
-        'backgroundColor'       : '#fff', // Field standart background Color
-        'textColor'             : '#000', // Field standart Text Color
-        'successURL'            : 'thankYou', // Redirect URL for Thank You Page
-        'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
-        'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
-        'onlyTextFields'        : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'], // Array of Field ID's that accept only Text input
-        'onlyNumberFields'      : ['#edit-submitted-new-1452694760168','#edit-submitted-new-1452867921500'], // Array of Field ID's that accept only Number input
-        'reEmailfieldId'        : '#edit-submitted-new-1452868753265', // Hidden email Field ID for email confirmation
-        'checkBoxTc'            : '#edit-submitted-new-1453817678761-1', // Id Checkbox for Terms & Conditions
-        'tcMessage'             : 'You must accept Terms & Conditions', // T & C check requiered message
-        'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
-        'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
-        'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
-        //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
-        //Requieres jQueryUI Datepicker
-        'onlyDateFieldId'       : '#edit-submitted-new-1473715368426', // Date of Birth Text Filed ID
-        'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
-        'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Hidden Month field ID
-        'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' // Hidden Year field ID
+ *       'backgroundColor'       : '#fff', // Field standart background Color
+ *       'textColor'             : '#000', // Field standart Text Color
+ *       'successURL'            : 'thankYou', // Redirect URL for Thank You Page
+ *       'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
+ *       'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
+ *       'onlyTextFields'        : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'], // Array of Field ID's that accept only Text input
+ *       'onlyNumberFields'      : ['#edit-submitted-new-1452694760168','#edit-submitted-new-1452867921500'], // Array of Field ID's that accept only Number input
+ *       'reEmailfieldId'        : '#edit-submitted-new-1452868753265', // Hidden email Field ID for email confirmation
+ *       'checkBoxTc'            : '#edit-submitted-new-1453817678761-1', // Id Checkbox for Terms & Conditions
+ *       'tcMessage'             : 'You must accept Terms & Conditions', // T & C check requiered message
+ *       'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
+ *       'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
+ *       'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
+ *       //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
+ *       //Requieres jQueryUI Datepicker
+ *       'onlyDateFieldId'       : '#edit-submitted-new-1473715368426', // Date of Birth Text Filed ID
+ *       'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
+ *       'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Hidden Month field ID
+ *       'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' // Hidden Year field ID
  *   });
  *
  */
