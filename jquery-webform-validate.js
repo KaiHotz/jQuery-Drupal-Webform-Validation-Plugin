@@ -187,7 +187,8 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        config.error[0] = true;
+
+                        config.error.push(true);
                     break;
                     default: 
                         $(this).css({
@@ -215,7 +216,7 @@
 
                     $(this).val(config.requiredEmailFieldMsg);
 
-                    config.error[1] = true;
+                    config.error.push(true);
                 }
                 else
                 {
@@ -239,7 +240,7 @@
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
                         });
-                        config.error[2] = true;
+                        config.error.push(true);
                     break;
                     default: 
                         $(this).css({
@@ -258,7 +259,8 @@
                 if(!checked_tc) 
                 {
                     alert(config.tcMessage);
-                    config.error[3] = true;
+
+                    config.error.push(true);
                 } 
 
             }
@@ -269,7 +271,8 @@
                 if(!checked_pc) 
                 {
                     alert(config.pcMessage);
-                    config.error[4] = true;
+
+                    config.error.push(true);
                 } 
 
             }
@@ -290,7 +293,7 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        config.error[5] = true;
+                        config.error.push(true);
                     break;
                     default: 
                         $(this).css({
@@ -323,8 +326,6 @@
                 that.selectValidation();
                 that.textAreaValidation();
                 that.checkboxValidation();
-
-                console.log(config.error)
 
                 if(!$.inArray(true, config.error))
                 {
