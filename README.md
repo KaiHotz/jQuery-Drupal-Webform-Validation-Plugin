@@ -61,7 +61,11 @@ All of the options below are available to customize Webform Validation Plugin.
 | `dayId`     			 | ''                                                                  	 | string | Hidden Day field ID               					|
 | `monthId`      		 | ''                                                               	 | string | Hidden Month field ID               			 	|
 | `yearId`               | ''                                             					     | string | Hidden Year field ID  				               	|
- 
+| `urlFw`                | ''                                                                    | string | Foneworx URL                                        |
+| `apiKeyFw`             | ''                                                                    | string | FoneWorx API Key                                    |
+| `firstNameFiledId`     | ''                                                                    | string | ID of the First Name Field in your Form             |
+| `lastNameFieldId`      | ''                                                                    | string | ID of the Last or Surename Field in your Form       |
+| `mobilePhoneFieldId`   | ''                                                                    | string | ID of the Mobile or Cell Phone number in your Form  |
 
 ### 2. Defaults
 
