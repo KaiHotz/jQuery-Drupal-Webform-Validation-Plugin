@@ -72,7 +72,7 @@
         {
             var valueText = $(config.onlyTextFields).val();
             if (valueText) {
-                $.each(config.onlyTextFields)function(index, value)
+                $.each(config.onlyTextFields, function(index, value)
                 {
                     $(value).keyup(function(event)
                     {
@@ -83,7 +83,7 @@
                             $(event.currentTarget).val('').focus(); 
                         }
                     });
-                }
+                });
             } 
         }
 
@@ -92,7 +92,7 @@
         {
             var valueNum = $(config.onlyNumberFields).val();
             if (valueNum) {
-                $.each(config.onlyNumberFields)function(index, value)
+                $.each(config.onlyNumberFields,function(index, value)
                 {
                     $(value).keyup(function(event)
                     {
@@ -103,7 +103,7 @@
                             $(event.currentTarget).val('').focus(); 
                         }
                     });
-                } 
+                }); 
             }
         }
 
@@ -367,7 +367,7 @@
         {
             that.textValidation();
             that.numericValidation();
-            that.switchemail();
+            that.switchEmail();
             that.switchDate();
             that.clerarField();
             that.formSubmit();
@@ -378,4 +378,3 @@
         return that;
     };
 })(jQuery);
-
