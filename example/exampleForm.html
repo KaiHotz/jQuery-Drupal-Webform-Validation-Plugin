@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Drupal Webform Validator</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="../source/jquery-webform-validate.js"></script>
+	<script>
+	jQuery(document).ready(function($) {
+		$('#webform-client-form-61').fromValidate({
+			'onlyTextFields' : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'],
+			'reEmailfieldId' : '#edit-submitted-new-1452868753265',
+			'dayId'			 : '#edit-submitted-new-1453816715685-new-1473774329945',
+			'monthId'		 : '#edit-submitted-new-1453816715685-new-1473774309612',
+			'yearId'		 : '#edit-submitted-new-1453816715685-new-1473774343584'
+		});
+	});
+	</script>
+</head>
+<body>
+
+<div class="form-container">
+    <form class="webform-client-form sabm-contact-us-form" enctype="multipart/form-data" action="http://index.html" method="post" id="webform-client-form-61" accept-charset="UTF-8" name="sabm-contact-us"><div>
+		<div class="contact-us-container t2_contact-us-container ">
+			<h1> </h1>
+			<h2>Test Form</h2>
+
+			<div class="contact-us-info t1_contact_us_info contact_us_column contact_us_column_1"></div>
+			<div class="contact-us-info t1_contact_us_info contact_us_column contact_us_column_2">
+				<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1452694760162">
+					<label style="display: none;">
+						First Name 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<input id="edit-submitted-new-1452694760162" name="submitted[new_1452694760162]" value="" size="60" maxlength="128" class="form-text required" placeholder="First Name *" type="text">
+				</div>
+				<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1452867921594">
+					<label style="display: none;">
+						Surename 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<input id="edit-submitted-new-1452867921594" name="submitted[new_1452867921594]" value="" size="60" maxlength="128" class="form-text required" placeholder="Surename *" type="text">
+				</div>
+				<div class="form-item webform-component webform-component-email" id="webform-component-new-1452868749240">
+					<label style="display: none;">
+						E-mail 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<input class="email form-text required ctkemail0" id="edit-submitted-new-1452868749240" name="submitted[new_1452868749240]" value="" size="60" maxlength="128" placeholder="E-mail *" type="text">
+				</div>
+				<div class="form-item webform-component webform-component-email" id="webform-component-new-1452868753265">
+					<label style="display: none;">
+						Re enter E-mail 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<input class="email form-text required ctkemail1" id="edit-submitted-new-1452868753265" name="submitted[new_1452868753265]" value="" size="60" maxlength="128" placeholder="Re enter E-mail *" type="text">
+				</div>
+				<fieldset class="webform-component-fieldset form-wrapper" id="webform-component-new-1453816715685">
+					<legend>
+						<span class="fieldset-legend">Date of birth</span>
+					</legend>
+					<div class="fieldset-wrapper">
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774329945">
+						 	<label style="display: none;">DD </label>
+						 	<input id="edit-submitted-new-1453816715685-new-1473774329945" name="submitted[new_1453816715685][new_1473774329945]" value="" size="60" maxlength="128" class="form-text required" placeholder="DD " type="text">
+						</div>
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774309612">
+					  		<label style="display: none;">MM </label>
+					 		<input id="edit-submitted-new-1453816715685-new-1473774309612" name="submitted[new_1453816715685][new_1473774309612]" value="" size="60" maxlength="128" class="form-text required" placeholder="MM " type="text">
+						</div>
+						<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1453816715685--new-1473774343584">
+					  		<label style="display: none;">YYYY </label>
+					 		<input id="edit-submitted-new-1453816715685-new-1473774343584" name="submitted[new_1453816715685][new_1473774343584]" value="" size="60" maxlength="128" class="form-text required" placeholder="YYYY " type="text">
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-item webform-component webform-component-textfield" id="webform-component-new-1473795570392">
+					<label style="display: none;">
+						Subject 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<input id="edit-submitted-new-1473795570392" name="submitted[new_1473795570392]" value="" size="60" maxlength="128" class="form-text required" placeholder="Subject *" type="text">
+				</div>
+				<div class="form-item webform-component webform-component-textarea" id="webform-component-new-1452870741269">
+					<label style="display: none;">
+						Message 
+						<span class="form-required" title="This field is required.">*</span>
+					</label>
+					<div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+						<textarea id="edit-submitted-new-1452870741269" name="submitted[new_1452870741269]" cols="60" rows="5" class="form-textarea required" placeholder="Message *"></textarea>
+						<div class="grippie"></div>
+					</div>
+				</div>
+				<input name="details[sid]" value="" type="hidden">
+				<input name="details[page_num]" value="1" type="hidden">
+				<input name="details[page_count]" value="1" type="hidden">
+				<input name="details[finished]" value="0" type="hidden">
+				<input name="form_build_id" value="form-jTHUREPl3_9xxYIRL_wb6hfLxNTIhQ65zeBRG0zjrWA" type="hidden">
+				<input name="form_id" value="webform_client_form_61" type="hidden">
+				<input class="mollom-content-id" name="mollom[contentId]" value="" type="hidden">
+				<input class="mollom-captcha-id" name="mollom[captchaId]" value="" type="hidden">
+				<div style="display: none;">
+					<div class="form-item form-type-textfield form-item-mollom-homepage">
+					<label style="display: none;">
+						Home page 
+					</label>
+					<input autocomplete="off" id="edit-mollom-homepage" name="mollom[homepage]" value="" size="60" maxlength="128" class="form-text" placeholder="Home page " type="text">
+				</div>
+			</div>
+			<div class="form-actions form-wrapper" id="edit-actions"><input id="edit-submit" name="op" value="Submit" class="form-submit" type="submit"></div> 
+		</div>
+	</div>
+</div>
+</form>  
+</div>
+
+</body>
+</html>
