@@ -22,7 +22,7 @@
         'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
         'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
         'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
-        //Only set if you use an only textfield for dateinput
+        //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
         //Requieres jQueryUI Datepicker
         'onlyDateFieldId'       : '#edit-submitted-new-1473715368426', // Date of Birth Text Filed ID
         'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
@@ -52,7 +52,7 @@
                 'checkBoxPc'            : '', // Id Checkbox for Privacy & Cookies
                 'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
                 'checkBoxOptIn'         : '', // Marketing Opt In checkbox ID
-                //Only set if you use an only textfield for dateinput
+                //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
                 //Requieres jQueryUI Datepicker
                 'onlyDateFieldId'       : '', // Date of Birth Text Filed ID
                 'dayId'                 : '', // Hidden Day field ID

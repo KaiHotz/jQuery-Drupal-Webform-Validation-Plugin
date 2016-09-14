@@ -80,7 +80,7 @@ $('form').fromValidate({
     'checkBoxPc'            : '', 
     'pcMessage'             : 'You must accept Our Privacy Policy', 
     'checkBoxOptIn'         : '', 
-    //Only set if you use an only textfield for dateinput
+    //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
     //Requieres jQueryUI Datepicker
     'onlyDateFieldId'       : '',
     'dayId'                 : '', 
