@@ -57,10 +57,10 @@ All of the options below are available to customize Webform Validation Plugin.
 | `checkBoxPc`           | ''                     											     | string | Id of Checkbox for Pricacy & Cookie          		|
 | `pcMessage`            | 'You must accept Our Privacy Policy'                                  | string | Pricacy & Cookie check requiered message 			|
 | `checkBoxOptIn`        | ''                                                                    | string | Id of Checkbox for Marketing OptIn  		       	|
+| `dayId`                | ''                                                                    | string | Day field ID                                        |
+| `monthId`              | ''                                                                    | string | Month field ID                                      |
+| `yearId`               | ''                                                                    | string | Year field ID                                       |
 | `onlyDateFieldId`      | ''                                                                  	 | string | Date of Birth Text Filed ID                 	 	|
-| `dayId`     			 | ''                                                                  	 | string | Hidden Day field ID               					|
-| `monthId`      		 | ''                                                               	 | string | Hidden Month field ID               			 	|
-| `yearId`               | ''                                             					     | string | Hidden Year field ID  				               	|
 | `urlFw`                | ''                                                                    | string | Foneworx URL                                        |
 | `apiKeyFw`             | ''                                                                    | string | FoneWorx API Key                                    |
 | `firstNameFiledId`     | ''                                                                    | string | ID of the First Name Field in your Form             |
@@ -87,18 +87,18 @@ $('form').fromValidate({
     'checkBoxPc'            : '', 
     'pcMessage'             : 'You must accept Our Privacy Policy', 
     'checkBoxOptIn'         : '', 
-    //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
-    //Requieres jQueryUI Datepicker
-    'onlyDateFieldId'       : '',
     'dayId'                 : '', 
     'monthId'               : '', 
     'yearId'                : '', 
+    //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
+    //Requieres jQueryUI Datepicker
+    'onlyDateFieldId'       : '',
     //Foneworx, Only use if Form Data has to be send to FoneWorx
-    'urlFw'                 : '', // Foneworx ULR
-    'apiKeyFw'              : '', // FoneWorx API Key
-    'firstNameFiledId'      : '', // ID of the First Name Field in your Form
-    'lastNameFieldId'       : '', // ID of the Last or Surename Field in your Form
-    'mobilePhoneFieldId'    : '', // ID of the Mobile or Cell Phone number in your Form
+    'urlFw'                 : '',
+    'apiKeyFw'              : '',
+    'firstNameFiledId'      : '',
+    'lastNameFieldId'       : '',
+    'mobilePhoneFieldId'    : '',
 
 });
 ```
