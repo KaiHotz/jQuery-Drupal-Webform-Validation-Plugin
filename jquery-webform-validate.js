@@ -69,8 +69,7 @@
         // Only Text input
         that.textValidation = function()
         {
-            var valueText = $(config.onlyTextFields).val();
-            if (valueText) {
+            if (config.onlyTextFields !='') {
                 $.each(config.onlyTextFields, function(index, value)
                 {
                     $(value).keyup(function(event)
@@ -89,8 +88,7 @@
         // Only Number input
         that.numericValidation = function()
         {
-            var valueNum = $(config.onlyNumberFields).val();
-            if (valueNum) {
+            if (config.onlyNumberFields !='') {
                 $.each(config.onlyNumberFields,function(index, value)
                 {
                     $(value).keyup(function(event)
@@ -143,8 +141,15 @@
         {
             $('.webform-component-textfield input').each(function(index, el) {
                 $(this).focus(function(event) {
-                    $(event.currentTarget).css({'background-color': config.backgroundColor,'color': config.textColor});
-                    $(event.currentTarget).val('');
+                    $(this).css({'background-color': config.backgroundColor,'color': config.textColor});
+                    $(this).val('');
+                });
+            });
+
+            $('.webform-component-email input').each(function(index, el) {
+                $(this).focus(function(event) {
+                    $(this).css({'background-color': config.backgroundColor,'color': config.textColor});
+                    $(this).val('');
                 });
             });
 
