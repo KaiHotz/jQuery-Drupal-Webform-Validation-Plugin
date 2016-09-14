@@ -1,2 +1,2 @@
 $ cat .gitattributes
-*.html linguist-language=JavaScrip
+*.html linguist-vendored=false
