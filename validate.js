@@ -4,19 +4,19 @@
  * Very configuralable Drupal Webform Validation plugin. 
  * Used in Drupal Sites to validate several fields that are requierd for Form Submition
  * 
- https://github.com/SpecialKcl/jQuery-Age-Gate-Plugin
+ * https://github.com/SpecialKcl/jQuery-Drupal-Webform-Validation-Plugin
  *
  * by Kai Hotz AKA SpecialKcl https://github.com/SpecialKcl
  *
  * Useage:
  *   $('form').fromValidate({
-        'backgrounColor'        : '#fff', // Field standart background Color
-        'textColor'             : '#0074be', // Field standart Text Color
+        'backgroundColor'       : '#fff', // Field standart background Color
+        'textColor'             : '#000', // Field standart Text Color
         'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
         'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
         'onlyTextFields'        : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'], // Array of Field ID's that accept only Text input
         'onlyNumberFields'      : ['#edit-submitted-new-1452694760168','#edit-submitted-new-1452867921500'], // Array of Field ID's that accept only Number input
-        'reEmailfieldId'        : '#edit-submitted-new-1452868753265', // Secondary email Field ID for email confirmation
+        'reEmailfieldId'        : '#edit-submitted-new-1452868753265', // Hidden email Field ID for email confirmation
         'checkBoxTc'            : '#edit-submitted-new-1453817678761-1', // Id Checkbox for Terms & Conditions
         'tcMessage'             : 'You must accept Terms & Conditions', // T & C check requiered message
         'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
@@ -24,10 +24,10 @@
         'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
         //Only set if you use an only textfield for dateinput
         //Requieres jQueryUI Datepicker
-        'onlyDateFieldId'       : '#edit-submitted-new-1473715368426'
-        'dayId'                 :'#edit-submitted-new-1453816715685-new-1473774329945',
-        'monthId'               :'#edit-submitted-new-1453816715685-new-1473774309612',
-        'yearId'                :'#edit-submitted-new-1453816715685-new-1473774343584'
+        'onlyDateFieldId'       : '#edit-submitted-new-1473715368426', // Date of Birth Text Filed ID
+        'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
+        'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Hidden Month field ID
+        'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' // Hidden Year field ID
  *   });
  *
  */
@@ -40,24 +40,24 @@
 
         var that = this,
             config = {
-                'backgrounColor'        : '#fff', // Field standart background Color
-                'textColor'             : '#0074be', // Field standart Text Color
+                'backgroundColor'       : '#fff', // Field standart background Color
+                'textColor'             : '#000', // Field standart Text Color
                 'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
                 'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
-                'onlyTextFields'        : ['#edit-submitted-new-1452694760162','#edit-submitted-new-1452867921594'], // Array of Field ID's that accept only Text input
-                'onlyNumberFields'      : ['#edit-submitted-new-1452694760168','#edit-submitted-new-1452867921500'], // Array of Field ID's that accept only Number input
-                'reEmailfieldId'        : '#edit-submitted-new-1452868753265', // Secondary email Field ID for email confirmation
-                'checkBoxTc'            : '#edit-submitted-new-1453817678761-1', // Id Checkbox for Terms & Conditions
+                'onlyTextFields'        : [], // Array of Field ID's that accept only Text input
+                'onlyNumberFields'      : [], // Array of Field ID's that accept only Number input
+                'reEmailfieldId'        : '', // Hidden email Field ID for email confirmation
+                'checkBoxTc'            : '', // Id Checkbox for Terms & Conditions
                 'tcMessage'             : 'You must accept Terms & Conditions', // T & C check requiered message
-                'checkBoxPc'            : '#edit-submitted-new-1453817678761-2', // Id Checkbox for Privacy & Cookies
+                'checkBoxPc'            : '', // Id Checkbox for Privacy & Cookies
                 'pcMessage'             : 'You must accept Our Privacy Policy', // P & C check requiered message
-                'checkBoxOptIn'         : '#edit-submitted-new-1473715615275-1', // Marketing Opt In checkbox ID
+                'checkBoxOptIn'         : '', // Marketing Opt In checkbox ID
                 //Only set if you use an only textfield for dateinput
                 //Requieres jQueryUI Datepicker
-                'onlyDateFieldId'       : '#edit-submitted-new-1473715368426'
-                'dayId'                 :'#edit-submitted-new-1453816715685-new-1473774329945',
-                'monthId'               :'#edit-submitted-new-1453816715685-new-1473774309612',
-                'yearId'                :'#edit-submitted-new-1453816715685-new-1473774343584',
+                'onlyDateFieldId'       : '', // Date of Birth Text Filed ID
+                'dayId'                 : '', // Hidden Day field ID
+                'monthId'               : '', // Hidden Month field ID
+                'yearId'                : '', // Hidden Year field ID
         };
 
         if (settings)
@@ -68,37 +68,41 @@
         // Only Text input
         that.textValidation = function()
         {
-
-            $.each(config.onlyTextFields)function()
-            {
-                $(this).keyup(function(event)
+            var valueText = $(config.onlyTextFields).val();
+            if (valueText) {
+                $.each(config.onlyTextFields)function()
                 {
-                    var numericheck = $.isNumeric($(this).val());
+                    $(this).keyup(function(event)
+                    {
+                        var numericheck = $.isNumeric($(this).val());
 
-                    if(numericheck) 
-                    { 
-                        $(this).val('').focus(); 
-                    }
-                });
+                        if(numericheck) 
+                        { 
+                            $(event.currentTarget).val('').focus(); 
+                        }
+                    });
+                }
             } 
         }
 
         // Only Number input
         that.numericValidation = function()
         {
-
-            $.each(config.onlyNumberFields)function()
-            {
-                $(this).keyup(function(event)
+            var valueNum = $(config.onlyNumberFields).val();
+            if (valueNum) {
+                $.each(config.onlyNumberFields)function()
                 {
-                    var numericheck = $.isNumeric($(this).val());
+                    $(this).keyup(function(event)
+                    {
+                        var numericheck = $.isNumeric($(this).val());
 
-                    if(!numericheck) 
-                    { 
-                        $(this).val('').focus(); 
-                    }
-                });
-            } 
+                        if(!numericheck) 
+                        { 
+                            $(event.currentTarget).val('').focus(); 
+                        }
+                    });
+                } 
+            }
         }
 
         that.switchDate = function()
@@ -132,6 +136,21 @@
                     $(config.reEmailfieldId).val($(this).val());
                 });
             }
+        }
+
+        that.clerarField = function()
+        {
+            $('.webform-component-textfield input').each(function(index, el) {
+                $(this).focus(function(event) {
+                    $(event.currentTarget).css({'background-color': config.backgroundColor,'color': config.textColor});
+                    $(event.currentTarget).val('');
+                });
+            });
+
+            $('.webform-component-textarea .form-textarea-wrapper textarea').focus(function(event) {
+                $(event.currentTarget).css({'background-color': config.backgroundColor,'color': config.textColor});
+                $(event.currentTarget).val('');
+            });
         }
 
         that.textFieldValidation = function()
@@ -341,6 +360,7 @@
             that.numericValidation();
             that.switchemail();
             that.switchDate();
+            that.clerarField();
             that.formSubmit();
         }
 
