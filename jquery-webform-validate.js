@@ -10,7 +10,7 @@
  *
  * Useage:
  *   $('form').fromValidate({
-         'error'                 : true, // Initial Error set for Form Submition
+         'error'                 : [], // Initial Error set for Form Submition
  *       'backgroundColor'       : '#fff', // Field standart background Color
  *       'textColor'             : '#000', // Field standart Text Color
  *       'successURL'            : 'thankYou', // Redirect URL for Thank You Page

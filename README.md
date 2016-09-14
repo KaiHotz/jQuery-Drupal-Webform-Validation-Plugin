@@ -43,15 +43,15 @@ All of the options below are available to customize Webform Validation Plugin.
 
 | Variable               | Default                                                               | Type   | Description                                     	|
 | ---------------------- |:---------------------------------------------------------------------:|:------:| ----------------------------------------------------|
-| `error`                | true                                                                  | boolean| Initial Error set for Form Submition                |
+| `error`                | []                                                                    | array  | Initial Error set for Form Submition                |
 | `backgroundColor`      | '#fff'                                                                | string | Field standart background Color                 	|
 | `textColor`            | '#000'					                                             | string | Field standart Text Color                       	|
 | `successURL`  		 | 'thankYou'                           								 | string | Redirect URL for Thank You Page						|
 | `requiredTxtFieldMsg`  | 'Mandatory Field'                           							 | string | Mandatory Field Message 							|
 | `requiredEmailFieldMsg`| 'Enter a valid E-Mail address'                                        | string | Valid Email Message           						|
 | `onlyTextFields`       | ''                         			                                 | array  | Array of Field ID's that accept only Text input 	|
-| `onlyNumberFields`     | ''               			                                         | array  | Array of Field ID's that accept only Number input   |
-| `reEmailfieldId`       | ''                                						             | string | Hidden email Field ID for email confirmation       	|
+| `onlyNumberFields`     | []               			                                         | array  | Array of Field ID's that accept only Number input   |
+| `reEmailfieldId`       | []                                						             | string | Hidden email Field ID for email confirmation       	|
 | `checkBoxTc`           | ''                       						                     | string | Id of Checkbox for Terms & Conditions     	    	|
 | `tcMessage`            | 'You must accept Terms & Conditions'                                  | string | Terms & Conditions check requiered message          |
 | `checkBoxPc`           | ''                     											     | string | Id of Checkbox for Pricacy & Cookie          		|
@@ -73,7 +73,7 @@ Age Gate Plugin default settings
 
 ```javascript
 $('form').fromValidate({
-    'error'                 : true, // Initial Error set for Form Submition
+    'error'                 : [], // Initial Error set for Form Submition
     'backgroundColor'       : '#fff', 
     'textColor'             : '#000', 
     'successURL'            : 'thankYou',
