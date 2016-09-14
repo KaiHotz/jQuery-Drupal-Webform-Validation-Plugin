@@ -1,0 +1,3 @@
+$ cat .gitattributes
+example/* linguist-vendored
+exampleForm.html linguist-vendored=false
