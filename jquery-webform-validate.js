@@ -312,14 +312,15 @@
                 //Day date validation limit day no more than 31
                 $(config.dayId).keyup(function(event) 
                 {
-                    if($(this).val() > 31){ 
+
+                    if($(this).val() > 31 || !$.isNumeric($(this).val())){ 
                         $(this).val('').focus().css({
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
                         });;  
                         return false; 
                     }
-                    else if($(this).val() <= 31 && $(this).val() !="")
+                    else if($(this).val() <= 31 && $(this).val() !="" )
                     {
                         $(this).css({
                             'background-color':'#B8F5B1',
@@ -331,7 +332,7 @@
                 //Month date validation limit month no more than 12
                 $(config.monthId).keyup(function(event) 
                 {
-                    if($(this).val() > 12) { 
+                    if($(this).val() > 12 || !$.isNumeric($(this).val())) { 
                         $(this).val('').focus().css({
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
@@ -353,7 +354,7 @@
                 {
                     var current = new Date().getFullYear();
 
-                    if($(this).val() > current) { 
+                    if($(this).val() > current || !$.isNumeric($(this).val())) { 
                         $(this).val('').focus().css({
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
