@@ -1,2 +1,2 @@
 $ cat .gitattributes
-*.js linguist-language=JavaScrip
+*.html linguist-language=JavaScrip
