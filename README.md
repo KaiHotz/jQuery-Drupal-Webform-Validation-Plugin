@@ -88,6 +88,13 @@ $('form').fromValidate({
     'dayId'                 : '', 
     'monthId'               : '', 
     'yearId'                : '', 
+    //Foneworx, Only use if Form Data has to be send to FoneWorx
+    'urlFw'                 : '', // Foneworx ULR
+    'apiKeyFw'              : '', // FoneWorx API Key
+    'firstNameFiledId'      : '', // ID of the First Name Field in your Form
+    'lastNameFieldId'       : '', // ID of the Last or Surename Field in your Form
+    'mobilePhoneFieldId'    : '', // ID of the Mobile or Cell Phone number in your Form
+
 });
 ```
 

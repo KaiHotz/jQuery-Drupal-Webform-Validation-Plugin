@@ -29,6 +29,12 @@
  *       'dayId'                 : '#edit-submitted-new-1453816715685-new-1473774329945', // Hidden Day field ID
  *       'monthId'               : '#edit-submitted-new-1453816715685-new-1473774309612', // Hidden Month field ID
  *       'yearId'                : '#edit-submitted-new-1453816715685-new-1473774343584' // Hidden Year field ID
+ *       //Foneworx, Only use if Form Data has to be send to FoneWorx
+ *       'urlFw'                 : '', // Foneworx ULR
+ *       'apiKeyFw'              : '', // FoneWorx API Key
+ *       'firstNameFiledId'      : '', // ID of the First Name Field in your Form
+ *       'lastNameFieldId'       : '', // ID of the Last or Surename Field in your Form
+ *       'mobilePhoneFieldId'    : '', // ID of the Mobile or Cell Phone number in your Form
  *   });
  *
  */
@@ -59,6 +65,12 @@
                 'dayId'                 : '', // Hidden Day field ID
                 'monthId'               : '', // Hidden Month field ID
                 'yearId'                : '', // Hidden Year field ID
+                //Foneworx, Only use if Form Data has to be send to FoneWorx
+                'urlFw'                 : '', // Foneworx ULR
+                'apiKeyFw'              : '', // FoneWorx API Key
+                'firstNameFiledId'      : '', // ID of the First Name Field in your Form
+                'lastNameFieldId'       : '', // ID of the Last or Surename Field in your Form
+                'mobilePhoneFieldId'    : '', // ID of the Mobile or Cell Phone number in your Form
         };
 
         if (settings)
@@ -319,15 +331,48 @@
 
                 if( error = false)
                 {
-                    $.ajax({
-                        type: "POST",
-                        url: that.attr('action'),
-                        data: that.serialize(), // serializesthe form's elements.
-                        success: function (data) {
-                            that.formReset();
-                            $(location).attr('href', config.successURL);
-                        }
-                    });
+                    if(config.urlFw != '' && config.apiKeyFw != '')
+                    {
+                        var params = {
+                            "api_key": config.apiKeyFw,
+                            "first_name": $(config.firstNameFiledId).val(),
+                            "last_name": $(config.lastNameFieldId).val(),
+                            "dob":$(config.dayId).val()+"-"+$(config.monthId).val()+"-"+$(config.yearId).val(),
+                            "email_address": $(config.reEmailfieldId).val(),
+                            "cell_number": $(config.mobilePhoneFieldId).val().replace(/ /g,''),
+                        };
+
+                        $.ajax({
+                            url : config.urlFw,
+                            type: "POST",
+                            data: JSON.stringify(params),
+                            dataType: 'json',
+                            async: false,
+                            success: function (data) {
+                                that.formReset();
+                                $(location).attr('href', config.successURL);
+                            },
+                            error: function(error) { 
+                                console.log(error);
+                            }       
+                        });
+
+                    }
+                    else
+                    {
+                        $.ajax({
+                            type: "POST",
+                            url: that.attr('action'),
+                            data: that.serialize(), // serializesthe form's elements.
+                            success: function (data) {
+                                that.formReset();
+                                $(location).attr('href', config.successURL);
+                            },
+                            error: function(error) { 
+                                console.log(error);
+                            }   
+                        });
+                    }
                 }
 
             });
