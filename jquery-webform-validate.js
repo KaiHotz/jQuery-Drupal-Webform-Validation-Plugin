@@ -47,7 +47,7 @@
 
         var that = this,
             config = {
-                'error'                 : true, // Initial Error set for Form Submition
+                'error'                 : [], // Initial Error set for Form Submition
                 'backgroundColor'       : '#fff', // Field standart background Color
                 'textColor'             : '#000', // Field standart Text Color
                 'successURL'            : 'thankYou', // Redirect URL for Thank You Page
@@ -187,15 +187,13 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        config.error = true;
+                        config.error[0] = true;
                     break;
                     default: 
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
                         });
-                        
-                        config.error = false; 
                 }
             });
         }
@@ -217,7 +215,7 @@
 
                     $(this).val(config.requiredEmailFieldMsg);
 
-                    config.error = true;
+                    config.error[1] = true;
                 }
                 else
                 {
@@ -225,8 +223,6 @@
                         'background-color':'#B8F5B1',
                         'color':'#000'
                     });
-
-                    config.error = false;
                 }
 
             });
@@ -243,15 +239,13 @@
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
                         });
-                        config.error = true;
+                        config.error[2] = true;
                     break;
                     default: 
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
                         });
-                        
-                        config.error = false; 
                 }
             });
         }
@@ -261,10 +255,10 @@
             if(config.checkBoxTc != ''){
                 var checked_tc = $(config.checkBoxTc).is(':checked');
 
-                if(!checked_optin) 
+                if(!checked_tc) 
                 {
                     alert(config.tcMessage);
-                    config.error = true;
+                    config.error[3] = true;
                 } 
 
             }
@@ -275,7 +269,7 @@
                 if(!checked_pc) 
                 {
                     alert(config.pcMessage);
-                    config.error = true;
+                    config.error[4] = true;
                 } 
 
             }
@@ -296,7 +290,7 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        config.error = true;
+                        config.error[5] = true;
                     break;
                     default: 
                         $(this).css({
@@ -304,7 +298,6 @@
                             'color':'#000'
                         });
                         
-                        config.error = false; 
                 }
             });
         }      
@@ -323,6 +316,8 @@
             {
                 event.preventDefault();
 
+                config.error =[];
+
                 that.textFieldValidation();
                 that.emailValidation();
                 that.selectValidation();
@@ -331,7 +326,7 @@
 
                 console.log(config.error)
 
-                if( config.error = false)
+                if(!$.inArray(true, config.error))
                 {
                     if(config.urlFw != '' && config.apiKeyFw != '')
                     {
