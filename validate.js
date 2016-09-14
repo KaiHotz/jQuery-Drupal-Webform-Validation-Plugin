@@ -70,9 +70,9 @@
         {
             var valueText = $(config.onlyTextFields).val();
             if (valueText) {
-                $.each(config.onlyTextFields)function()
+                $.each(config.onlyTextFields)function(index, value)
                 {
-                    $(this).keyup(function(event)
+                    $(value).keyup(function(event)
                     {
                         var numericheck = $.isNumeric($(this).val());
 
@@ -90,9 +90,9 @@
         {
             var valueNum = $(config.onlyNumberFields).val();
             if (valueNum) {
-                $.each(config.onlyNumberFields)function()
+                $.each(config.onlyNumberFields)function(index, value)
                 {
-                    $(this).keyup(function(event)
+                    $(value).keyup(function(event)
                     {
                         var numericheck = $.isNumeric($(this).val());
 
