@@ -10,7 +10,6 @@
  *
  * Useage:
  *   $('form').fromValidate({
-         'error'                 : [], // Initial Error set for Form Submition
  *       'backgroundColor'       : '#fff', // Field standart background Color
  *       'textColor'             : '#000', // Field standart Text Color
  *       'successURL'            : 'thankYou', // Redirect URL for Thank You Page
@@ -47,7 +46,6 @@
 
         var that = this,
             config = {
-                'error'                 : [], // Initial Error set for Form Submition
                 'backgroundColor'       : '#fff', // Field standart background Color
                 'textColor'             : '#000', // Field standart Text Color
                 'successURL'            : 'thankYou', // Redirect URL for Thank You Page
@@ -79,6 +77,8 @@
         {
             $.extend(config, settings);
         }
+
+        var error = [];
  
         // Only Text input
         that.textValidation = function()
@@ -188,7 +188,7 @@
                         });
                         $(this).val(config.requiredTxtFieldMsg);
 
-                        config.error.push(true);
+                        error.push(true);
                     break;
                     default: 
                         $(this).css({
@@ -216,7 +216,7 @@
 
                     $(this).val(config.requiredEmailFieldMsg);
 
-                    config.error.push(true);
+                    error.push(true);
                 }
                 else
                 {
@@ -260,7 +260,7 @@
                 {
                     alert(config.tcMessage);
 
-                    config.error.push(true);
+                    error.push(true);
                 } 
 
             }
@@ -272,7 +272,7 @@
                 {
                     alert(config.pcMessage);
 
-                    config.error.push(true);
+                    error.push(true);
                 } 
 
             }
@@ -293,7 +293,7 @@
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
-                        config.error.push(true);
+                        error.push(true);
                     break;
                     default: 
                         $(this).css({
@@ -387,7 +387,7 @@
             {
                 event.preventDefault();
 
-                config.error =[];
+                error =[];
 
                 that.textFieldValidation();
                 that.emailValidation();
@@ -395,7 +395,7 @@
                 that.textAreaValidation();
                 that.checkboxValidation();
 
-                if(config.error == "")
+                if(error == "")
                 {
                     if(config.urlFw != '' && config.apiKeyFw != '')
                     {
