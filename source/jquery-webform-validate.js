@@ -383,7 +383,7 @@
         //Submit function
         that.formSubmit = function()
         {
-            $('input[type="submit"]').click( function(event) 
+            $('form.webform-client-form input[type="submit"]').click( function(event) 
             {
                 event.preventDefault();
 
@@ -423,15 +423,22 @@
                     }
                     else
                     {
-                        $.ajax({
-                            type: "POST",
-                            url: $('form').attr('action'),
-                            data: $('form').serialize(), // serializesthe form's elements.
-                            success: function (data) {
-                                that.formReset();
-                                $(location).attr('href', config.successURL);
-                            }
-                        });
+                        if(config.successURL != "")
+                        {
+                            $.ajax({
+                                type: "POST",
+                                url: $('form.webform-client-form').attr('action'),
+                                data: $('form.webform-client-form').serialize(), // serializesthe form's elements.
+                                success: function (data) {
+                                    that.formReset();
+                                    $(location).attr('href', config.successURL);
+                                }
+                            });
+                        }
+                        else
+                        {
+                            that.submit();
+                        }
                     }
                 }
 
