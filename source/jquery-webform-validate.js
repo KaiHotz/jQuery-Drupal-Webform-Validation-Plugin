@@ -236,6 +236,8 @@
                 switch($(this).val())
                 {
                     case '':
+                    case 'Undefined':
+                    case undefined:
                         $(this).css({
                             'background-color':'#FF9F9F', 
                             'color':'#CC3333'
