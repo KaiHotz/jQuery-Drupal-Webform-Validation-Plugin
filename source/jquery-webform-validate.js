@@ -10,8 +10,6 @@
  *
  * Useage:
  *   $('form').fromValidate({
- *       'backgroundColor'       : '#fff', // Field standart background Color
- *       'textColor'             : '#000', // Field standart Text Color
  *       'successURL'            : 'thankYou', // Redirect URL for Thank You Page
  *       'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
  *       'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
@@ -46,8 +44,6 @@
 
         var that = this,
             config = {
-                'backgroundColor'       : '#fff', // Field standart background Color
-                'textColor'             : '#000', // Field standart Text Color
                 'successURL'            : 'thankYou', // Redirect URL for Thank You Page
                 'requiredTxtFieldMsg'   : 'Mandatory Field', // Mandatory Field Message
                 'requiredEmailFieldMsg' : 'Enter a valid E-Mail address', // Valid Email Message
@@ -154,21 +150,33 @@
         that.clerarField = function()
         {
             $('.webform-component-textfield input').each(function(index, el) {
+                
+                var bgColor = $(this).css('background-color'),
+                    color   = $(this).css('color');
+
                 $(this).focus(function(event) {
-                    $(this).css({'background-color': config.backgroundColor,'color': config.textColor});
+                    $(this).css({'background-color': bgColor,'color': color});
                     $(this).val('');
                 });
             });
 
             $('.webform-component-email input').each(function(index, el) {
+
+                var bgColor = $(this).css('background-color'),
+                    color   = $(this).css('color');
+
                 $(this).focus(function(event) {
-                    $(this).css({'background-color': config.backgroundColor,'color': config.textColor});
+                    $(this).css({'background-color': bgColor,'color': color});
                     $(this).val('');
                 });
             });
 
             $('.webform-component-textarea .form-textarea-wrapper textarea').focus(function(event) {
-                $(event.currentTarget).css({'background-color': config.backgroundColor,'color': config.textColor});
+
+                var bgColor = $(this).css('background-color'),
+                    color   = $(this).css('color');
+
+                $(event.currentTarget).css({'background-color': bgColor,'color': color});
                 $(event.currentTarget).val('');
             });
         }
