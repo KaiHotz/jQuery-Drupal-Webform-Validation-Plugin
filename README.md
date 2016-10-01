@@ -15,7 +15,7 @@ Used in Drupal Sites to validate several fields that are requierd for Form Submi
 
 To use Webform Validation Plugin, you’ll need to make sure both the Webform Validation Plugin and jQuery 1.9 or higher scripts are included.
 
-```htnml
+```html
 <!--  jQuery 1.9+  -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
  
