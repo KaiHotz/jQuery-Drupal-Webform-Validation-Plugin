@@ -1,12 +1,12 @@
 /**
  * jQuery Drupal Webform Validation v1.0.0
  *
- * Very configuralable Drupal Webform Validation plugin. 
+ * Very configuralable Drupal Webform Validation plugin.
  * Used in Drupal Sites to validate several fields that are requierd for Form Submition
- * 
- * https://github.com/SpecialKcl/jQuery-Drupal-Webform-Validation-Plugin
  *
- * by Kai Hotz AKA SpecialKcl https://github.com/SpecialKcl
+ * https://github.com/KaiHotz/jQuery-Drupal-Webform-Validation-Plugin
+ *
+ * by Kai Hotz https://github.com/KaiHotz
  *
  * Useage:
  *   $('form').fromValidate({
@@ -75,7 +75,7 @@
         }
 
         var error = [];
- 
+
         // Only Text input
         that.textValidation = function()
         {
@@ -86,13 +86,13 @@
                     {
                         var numericheck = $.isNumeric($(this).val());
 
-                        if(numericheck) 
-                        { 
-                            $(event.currentTarget).val('').focus(); 
+                        if(numericheck)
+                        {
+                            $(event.currentTarget).val('').focus();
                         }
                     });
                 });
-            } 
+            }
         }
 
         // Only Number input
@@ -105,12 +105,12 @@
                     {
                         var numericheck = $.isNumeric($(this).val());
 
-                        if(!numericheck) 
-                        { 
-                            $(event.currentTarget).val('').focus(); 
+                        if(!numericheck)
+                        {
+                            $(event.currentTarget).val('').focus();
                         }
                     });
-                }); 
+                });
             }
         }
 
@@ -150,7 +150,7 @@
         that.clerarField = function()
         {
             $('.webform-component-textfield input').each(function(index, el) {
-                
+
                 var bgColor = $(this).css('background-color'),
                     color   = $(this).css('color');
 
@@ -191,14 +191,14 @@
                     case config.requiredTxtFieldMsg :
                     case $(this).attr('placeholder'):
                         $(this).css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
 
                         error.push(true);
                     break;
-                    default: 
+                    default:
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
@@ -210,7 +210,7 @@
         that.emailValidation = function()
         {
             var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
-            
+
             $('.webform-component-email input').each(function(index, el) {
 
                 var emailVal = $(this).val();
@@ -218,7 +218,7 @@
                 if(!pattern.test(emailVal))
                 {
                     $(this).css({
-                        'background-color':'#FF9F9F', 
+                        'background-color':'#FF9F9F',
                         'color':'#CC3333'
                     });
 
@@ -247,12 +247,12 @@
                     case 'Undefined':
                     case undefined:
                         $(this).css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
                         });
                         config.error.push(true);
                     break;
-                    default: 
+                    default:
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
@@ -266,27 +266,27 @@
             if(config.checkBoxTc != ''){
                 var checked_tc = $(config.checkBoxTc).is(':checked');
 
-                if(!checked_tc) 
+                if(!checked_tc)
                 {
                     alert(config.tcMessage);
 
                     error.push(true);
-                } 
+                }
 
             }
 
             if(config.checkBoxPc != ''){
                 var checked_pc = $(config.checkBoxPc).is(':checked');
 
-                if(!checked_pc) 
+                if(!checked_pc)
                 {
                     alert(config.pcMessage);
 
                     error.push(true);
-                } 
+                }
 
             }
-            
+
         }
 
         that.textAreaValidation = function()
@@ -299,36 +299,36 @@
                     case config.requiredTxtFieldMsg :
                     case $(this).attr('placeholder'):
                         $(this).css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
                         });
                         $(this).val(config.requiredTxtFieldMsg);
                         error.push(true);
                     break;
-                    default: 
+                    default:
                         $(this).css({
                             'background-color':'#B8F5B1',
                             'color':'#000'
                         });
-                        
+
                 }
             });
-        } 
+        }
 
         that.dateValidate = function()
         {
             if(config.onlyDateFieldId == "" && config.dayId !="" && config.montId !="" && config.yearId !="")
             {
                 //Day date validation limit day no more than 31
-                $(config.dayId).keyup(function(event) 
+                $(config.dayId).keyup(function(event)
                 {
 
-                    if($(this).val() > 31 || !$.isNumeric($(this).val())){ 
+                    if($(this).val() > 31 || !$.isNumeric($(this).val())){
                         $(this).val('').focus().css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
-                        });;  
-                        return false; 
+                        });;
+                        return false;
                     }
                     else if($(this).val() <= 31 && $(this).val() !="" )
                     {
@@ -340,14 +340,14 @@
                 });
 
                 //Month date validation limit month no more than 12
-                $(config.monthId).keyup(function(event) 
+                $(config.monthId).keyup(function(event)
                 {
-                    if($(this).val() > 12 || !$.isNumeric($(this).val())) { 
+                    if($(this).val() > 12 || !$.isNumeric($(this).val())) {
                         $(this).val('').focus().css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
-                        });;  
-                        return false; 
+                        });;
+                        return false;
                     }
                     else if($(this).val() <= 12 && $(this).val() !="")
                     {
@@ -360,16 +360,16 @@
                 });
 
                 //Year validation limit year no more than current
-                $(config.yearId).keyup(function(event) 
+                $(config.yearId).keyup(function(event)
                 {
                     var current = new Date().getFullYear();
 
-                    if($(this).val() > current || !$.isNumeric($(this).val())) { 
+                    if($(this).val() > current || !$.isNumeric($(this).val())) {
                         $(this).val('').focus().css({
-                            'background-color':'#FF9F9F', 
+                            'background-color':'#FF9F9F',
                             'color':'#CC3333'
-                        });; 
-                        return false; 
+                        });;
+                        return false;
                     }
                     else if($(this).val() <= current && $(this).val() !="")
                     {
@@ -379,9 +379,9 @@
                         });
                     }
 
-                }); 
-            }       
-        }     
+                });
+            }
+        }
 
         //Form reset
         that.formReset = function()
@@ -393,7 +393,7 @@
         //Submit function
         that.formSubmit = function()
         {
-            $('form.webform-client-form input[type="submit"]').click( function(event) 
+            $('form.webform-client-form input[type="submit"]').click( function(event)
             {
                 event.preventDefault();
 
@@ -427,7 +427,7 @@
                             success: function (data) {
                                 that.formReset();
                                 $(location).attr('href', config.successURL);
-                            }     
+                            }
                         });
 
                     }

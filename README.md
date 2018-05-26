@@ -1,13 +1,13 @@
 # jQuery-Drupal-Webform-Validation-Plugin
- 
+
  jQuery Drupal Webform Validation v1.0.0
 
-Very configuralable Drupal Webform Validation plugin. 
+Very configuralable Drupal Webform Validation plugin.
 Used in Drupal Sites to validate several fields that are requierd for Form Submition
 
-[Webform Validate](https://github.com/SpecialKcl/jQuery-Drupal-Webform-Validation-Plugin)
+[Webform Validate](https://github.com/KaiHotz/jQuery-Drupal-Webform-Validation-Plugin)
 
- by Kai Hotz AKA [SpecialKcl](https://github.com/SpecialKcl) 
+ by [Kai Hotz](https://github.com/KaiHotz)
 
 ## How to Use:
 
@@ -18,7 +18,7 @@ To use Webform Validation Plugin, you’ll need to make sure both the Webform Va
 ```html
 <!--  jQuery 1.9+  -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
- 
+
 <!-- Include js plugin -->
 <script src="js/jquery-webform-validate.js"></script>
 ```
@@ -73,19 +73,19 @@ Age Gate Plugin default settings
 
 $('form').fromValidate({
     'successURL'            : 'thankYou',
-    'requiredTxtFieldMsg'   : 'Mandatory Field', 
+    'requiredTxtFieldMsg'   : 'Mandatory Field',
     'requiredEmailFieldMsg' : 'Enter a valid E-Mail address',
-    'onlyTextFields'        : [], 
-    'onlyNumberFields'      : [], 
-    'reEmailfieldId'        : '', 
-    'checkBoxTc'            : '', 
-    'tcMessage'             : 'You must accept Terms & Conditions', 
-    'checkBoxPc'            : '', 
-    'pcMessage'             : 'You must accept Our Privacy Policy', 
-    'checkBoxOptIn'         : '', 
-    'dayId'                 : '', 
-    'monthId'               : '', 
-    'yearId'                : '', 
+    'onlyTextFields'        : [],
+    'onlyNumberFields'      : [],
+    'reEmailfieldId'        : '',
+    'checkBoxTc'            : '',
+    'tcMessage'             : 'You must accept Terms & Conditions',
+    'checkBoxPc'            : '',
+    'pcMessage'             : 'You must accept Our Privacy Policy',
+    'checkBoxOptIn'         : '',
+    'dayId'                 : '',
+    'monthId'               : '',
+    'yearId'                : '',
     //Only set if you use an only textfield for dateinput and three hidden fields for DD, MM and Year Normaly used for SalesForce or Foneworx
     //Requieres jQueryUI Datepicker
     'onlyDateFieldId'       : '',
